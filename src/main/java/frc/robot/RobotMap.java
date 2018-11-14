@@ -39,7 +39,7 @@ public class RobotMap {
   public static SpeedController Vacuum;
 
   //RockPlaque
-  public static SpeedController Pusher;
+  public static SpeedController PusherMotor;
 
   public static void init(){
 
@@ -58,9 +58,10 @@ public class RobotMap {
       Vacuum = new WPI_VictorSPX(8);//a valider
 
     //RockPlaque
-      Pusher = new WPI_VictorSPX(9);//a valider
+      PusherMotor = new WPI_VictorSPX(9);//a valider
 
   }
+
   
 
   // If you are using multiple modules, make sure to define both the port

@@ -9,13 +9,14 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.*;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  * @author Nehela
  * @since 2 Novembre
  */
-public class ExampleSubsystem extends Subsystem {
+public class FrontArm extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 

@@ -9,24 +9,25 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.*;
 
 /**
  * An example subsystem.  You can replace me with your own Subsystem.
  * @author nehela
  * @since 2 November
  */
-public class ExampleSubsystem extends Subsystem {
+public class RockPlaque extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  private static SpeedController Pusher = RobotMap.Pusher;
+  private static SpeedController Pusher = RobotMap.PusherMotor;
 
   public void push(){
-    Pusher.Set(0.5);
+    Pusher.set(0.5);
   }
 
   public void stopPusher(){
-    Pusher.Set(0);
+    Pusher.set(0);
   }
 
   @Override
