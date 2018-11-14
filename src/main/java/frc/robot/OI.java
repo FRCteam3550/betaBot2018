@@ -7,6 +7,10 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import edu.wpi.first.wpilibj.buttons.Button;
+
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -40,9 +44,46 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
 
-  private int ONE = 1;
+  private int UN = 1;
+  private int DEUX = 2;
+  private int TROIS = 3;
+  private int QUATRE = 4;
+  private int CINQ = 5;
+  private int SIX = 6;
+  private int SEPT = 7;
+  private int HUIT = 8;
+  private int NEUF = 9; 
 
   Joystick copilote = new Joystick(0);
-  Button button1 = new JoysticButton(copilote, ONE);
-  button1.
+
+  public OI(){
+    
+  Button button4 = new JoystickButton(copilote, QUATRE);
+  button4.whenPressed(new frontup());
+
+  
+  Button button3 = new JoystickButton(copilote, TROIS);
+  button3.whenPressed(new frontdown());
+
+  Button button1 = new JoystickButton(copilote, UN);
+  button1.whenPressed(new aspirer());
+
+  Button button2 = new JoystickButton(copilote, DEUX);
+  button2.whenPressed(new rejetter());
+
+  Button button6 = new JoystickButton(copilote, SIX);
+  button6.whenPressed(new backup());
+  
+  Button button5 = new JoystickButton(copilote, CINQ);
+  button5.whenPressed(new backdown());
+
+  Button button7 = new JoystickButton(copilote, SEPT);
+  button7.whenPressed(new opendoor());
+
+  Button button8 = new JoystickButton(copilote, HUIT);
+  button7.whenPressed(new closedoor());
+
+  Button button9 = new JoystickButton(copilote, NEUF);
+  button9.whenPressed(new pushballs());
+      }
 }
