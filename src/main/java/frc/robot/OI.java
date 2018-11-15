@@ -9,6 +9,15 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.Aspirer;
+import frc.robot.commands.BackDown;
+import frc.robot.commands.BackarmUp;
+import frc.robot.commands.CloseDoor;
+import frc.robot.commands.FrontArmDown;
+import frc.robot.commands.FrontArmUp;
+import frc.robot.commands.OpenDoor;
+import frc.robot.commands.PushBalls;
+import frc.robot.commands.Rejeter;
 import edu.wpi.first.wpilibj.buttons.Button;
 
 /**
@@ -59,31 +68,31 @@ public class OI {
   public OI(){
     
   Button button4 = new JoystickButton(copilote, QUATRE);
-  button4.whenPressed(new frontup());
+  button4.whenPressed(new FrontArmUp());
 
   
   Button button3 = new JoystickButton(copilote, TROIS);
-  button3.whenPressed(new frontdown());
+  button3.whenPressed(new FrontArmDown());
 
   Button button1 = new JoystickButton(copilote, UN);
-  button1.whenPressed(new aspirer());
+  button1.whenPressed(new Aspirer());
 
   Button button2 = new JoystickButton(copilote, DEUX);
-  button2.whenPressed(new rejetter());
+  button2.whenPressed(new Rejeter());
 
   Button button6 = new JoystickButton(copilote, SIX);
-  button6.whenPressed(new backup());
+  button6.whenPressed(new BackarmUp());
   
   Button button5 = new JoystickButton(copilote, CINQ);
-  button5.whenPressed(new backdown());
+  button5.whenPressed(new BackDown());
 
   Button button7 = new JoystickButton(copilote, SEPT);
-  button7.whenPressed(new opendoor());
+  button7.whenPressed(new OpenDoor());
 
   Button button8 = new JoystickButton(copilote, HUIT);
-  button7.whenPressed(new closedoor());
+  button7.whenPressed(new CloseDoor());
 
   Button button9 = new JoystickButton(copilote, NEUF);
-  button9.whenPressed(new pushballs());
+  button9.whenPressed(new PushBalls());
       }
 }
