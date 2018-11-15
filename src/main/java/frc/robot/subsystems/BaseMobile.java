@@ -33,6 +33,9 @@ public class BaseMobile extends Subsystem {
   public BaseMobile(){
     m_robotdrive = new DifferentialDrive(m_left,m_right);
     m_robotdrive.setDeadband(0.1);
+    m_robotdrive.setSafetyEnabled(true);
+		m_robotdrive.setExpiration(0.1); 
+		m_robotdrive.setMaxOutput(1.0);
   }
 
   @Override
