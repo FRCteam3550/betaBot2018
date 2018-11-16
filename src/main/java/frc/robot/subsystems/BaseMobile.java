@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.drive.*;
 //import com.ctre.phoenix.motorcontrol.can.*;
@@ -41,6 +42,26 @@ public class BaseMobile extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    // setDefaultCommand(new MySpecialCommand());`
+    setDefaultCommand(new ArcadeDrive());
   } 
-}
+  public void stopRobot() {
+    m_robotdrive.stopMotor();
+  }
+  public void arcadedrive( Joystick stick) {
+    m_robotdrive.arcadeDrive(-stick.getY(), stick.getX());
+  }
+
+  public void arcadedrive(double speed, double rotation) {
+    m_robotdrive.arcadeDrive(speed, rotation);
+  }
+
+  public void arcadedrive( double speed, double rotation, boolean sensitivity){
+    m_robotdrive.arcadeDrive(speed, rotation, sensitivity);
+  }
+
+  public void curvatureDrive( double xSpeed, double zRotation, boolean isQuickTurn) {
+    m_robotdrive.curvatureDrive(xSpeed, zRotation, isQuickTurn);
+  }
+    
+} 

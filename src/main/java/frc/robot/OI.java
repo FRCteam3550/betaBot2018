@@ -64,7 +64,7 @@ public class OI {
   private int NEUF = 9; 
 
   Joystick copilote = new Joystick(0);
-
+  Joystick pilote = new Joystick(1);
   public OI(){
     
   Button button4 = new JoystickButton(copilote, QUATRE);
@@ -94,5 +94,9 @@ public class OI {
 
   Button button9 = new JoystickButton(copilote, NEUF);
   button9.whenPressed(new PushBalls());
+      }
+
+  public Joystick getPilotStick(){
+    return pilote;
       }
 }
