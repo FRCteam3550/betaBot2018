@@ -17,6 +17,7 @@ public class FrontArmUp extends Command {
   public FrontArmUp() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_Frontarm);
+    //requires(Robot.m_Frontarm);
   }
 
   // Called just before this Command runs the first time

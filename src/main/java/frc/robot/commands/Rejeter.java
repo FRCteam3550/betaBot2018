@@ -50,4 +50,4 @@ public class Rejeter extends Command {
   protected void interrupted() {
     end();
   }
-}
+} 

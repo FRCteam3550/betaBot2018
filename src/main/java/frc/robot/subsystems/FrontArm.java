@@ -9,6 +9,8 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.*;
+//import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.*;
 
 /**
@@ -24,6 +26,11 @@ public class FrontArm extends Subsystem {
   private static SpeedController FrontRight = RobotMap.RightFrontArm;
   private static SpeedController Vacuum = RobotMap.Vacuum;
 
+  @Override
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    setDefaultCommand(new FrontArmDown());
+  }
   public void frontUp(){
     FrontLeft.set(0.5);
     FrontRight.set(0.5);
@@ -50,12 +57,4 @@ public class FrontArm extends Subsystem {
   public void stopVacuum(){
     Vacuum.set(0);
   }
-
-  
-
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
-}
+} 

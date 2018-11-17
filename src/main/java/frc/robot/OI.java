@@ -9,15 +9,15 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.Aspirer;
-import frc.robot.commands.BackDown;
-import frc.robot.commands.BackarmUp;
-import frc.robot.commands.CloseDoor;
-import frc.robot.commands.FrontArmDown;
-import frc.robot.commands.FrontArmUp;
-import frc.robot.commands.OpenDoor;
-import frc.robot.commands.PushBalls;
-import frc.robot.commands.Rejeter;
+import frc.robot.commands.*;
+//import frc.robot.commands.BackDown;
+//import frc.robot.commands.BackarmUp;
+//import frc.robot.commands.CloseDoor;
+//import frc.robot.commands.FrontArmDown;
+//import frc.robot.commands.FrontArmUp;
+//import frc.robot.commands.OpenDoor;
+//import frc.robot.commands.PushBalls;
+//import frc.robot.commands.Rejeter;
 import edu.wpi.first.wpilibj.buttons.Button;
 
 /**
@@ -90,7 +90,7 @@ public class OI {
   button7.whenPressed(new OpenDoor());
 
   Button button8 = new JoystickButton(copilote, HUIT);
-  button7.whenPressed(new CloseDoor());
+  button8.whenPressed(new CloseDoor());
 
   Button button9 = new JoystickButton(copilote, NEUF);
   button9.whenPressed(new PushBalls());

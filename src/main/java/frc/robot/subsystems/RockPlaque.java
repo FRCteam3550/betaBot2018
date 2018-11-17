@@ -9,6 +9,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import frc.robot.commands.*;
 import edu.wpi.first.wpilibj.*;
 
 /**
@@ -22,6 +23,12 @@ public class RockPlaque extends Subsystem {
 
   private static SpeedController Pusher = RobotMap.PusherMotor;
 
+  @Override
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+     setDefaultCommand(new Rejeter());
+  }
+
   public void push(){
     Pusher.set(0.5);
   }
@@ -29,10 +36,5 @@ public class RockPlaque extends Subsystem {
   public void stopPusher(){
     Pusher.set(0);
   }
-
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
-  }
-}
+  
+} 

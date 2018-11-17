@@ -50,4 +50,4 @@ public class Aspirer extends Command {
   protected void interrupted() {
     end();
   }
-}
+} 

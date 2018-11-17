@@ -50,4 +50,4 @@ public class CloseDoor extends Command {
   protected void interrupted() {
     end();
   }
-}
+} 

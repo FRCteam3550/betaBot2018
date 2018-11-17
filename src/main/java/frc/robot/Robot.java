@@ -23,10 +23,10 @@ import frc.robot.subsystems.*;
  * project.
  */
 public class Robot extends TimedRobot {
-  public static BaseMobile m_BaseMobile = new BaseMobile();
-  public static BackArm m_BackArm = new BackArm();
-  public static FrontArm m_Frontarm = new FrontArm();
-  public static RockPlaque m_RockPlaque = new RockPlaque();
+  public static BaseMobile m_BaseMobile;
+  public static BackArm m_BackArm;
+  public static FrontArm m_Frontarm;
+  public static RockPlaque m_RockPlaque;
   public static OI m_oi;
 
   Command m_autonomousCommand;
@@ -38,6 +38,12 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    RobotMap.init();
+    //m_oi = new OI();
+    m_BaseMobile = new BaseMobile();
+    m_BackArm = new BackArm();
+    m_Frontarm = new FrontArm();
+    m_RockPlaque = new RockPlaque();
     m_oi = new OI();
     m_chooser.addDefault("Default Auto", new Rejeter());
     // chooser.addObject("My Auto", new MyAutoCommand());

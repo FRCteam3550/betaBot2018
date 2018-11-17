@@ -28,10 +28,12 @@ public class BaseMobile extends Subsystem {
   
   private static SpeedController m_left = RobotMap.LeftMotor;
   private static SpeedController m_right =  RobotMap.RightMotor;
-  
+  //private static SpeedControllerGroup m_leftg;
+  //private static SpeedControllerGroup m_rightg;
   private final DifferentialDrive m_robotdrive;
 
   public BaseMobile(){
+   //m_leftg= new SpeedControllerGroup(speedController, speedControllers)
     m_robotdrive = new DifferentialDrive(m_left,m_right);
     m_robotdrive.setDeadband(0.1);
     m_robotdrive.setSafetyEnabled(true);

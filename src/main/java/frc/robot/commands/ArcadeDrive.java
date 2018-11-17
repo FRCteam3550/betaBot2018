@@ -41,7 +41,7 @@ public class ArcadeDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_Frontarm.stopVacuum();
+    Robot.m_BaseMobile.stopRobot();
 
   }
 
