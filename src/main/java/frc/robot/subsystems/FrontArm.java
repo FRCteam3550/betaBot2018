@@ -29,15 +29,15 @@ public class FrontArm extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    setDefaultCommand(new FrontArmDown());
-  }
+    setDefaultCommand(new StopFrontArm()) ;
+    }
   public void frontUp(){
-    FrontLeft.set(0.5);
+    FrontLeft.set(-0.5);
     FrontRight.set(0.5);
   }
 
   public void frontDown(){
-    FrontLeft.set(-0.5);
+    FrontLeft.set(0.5);
     FrontRight.set(-0.5);
   }
 

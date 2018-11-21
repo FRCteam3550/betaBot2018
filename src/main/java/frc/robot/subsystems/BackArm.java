@@ -29,12 +29,12 @@ public class BackArm extends Subsystem {
 
   public void backUp(){
     BackLeft.set(0.5);
-    BackRight.set(0.5);
+    BackRight.set(-0.5);
   }
 
   public void backDown(){
     BackLeft.set(-0.5);
-    BackRight.set(-0.5);
+    BackRight.set(0.5);
   }
 
   public void closeDoor(){

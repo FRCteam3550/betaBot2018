@@ -26,7 +26,7 @@ public class RockPlaque extends Subsystem {
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-     setDefaultCommand(new Rejeter());
+     setDefaultCommand(new StopPusher());
   }
 
   public void push(){

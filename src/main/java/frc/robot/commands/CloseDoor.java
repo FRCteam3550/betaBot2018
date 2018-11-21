@@ -22,7 +22,7 @@ public class CloseDoor extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.m_BackArm.closeDoor();
+    Robot.m_BackArm.stopDoor();
 
   }
 
@@ -41,7 +41,7 @@ public class CloseDoor extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_BackArm.closeDoor();
+    Robot.m_BackArm.stopDoor();
   }
 
   // Called when another command which requires one or more of the same
