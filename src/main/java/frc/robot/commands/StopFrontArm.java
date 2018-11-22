@@ -13,23 +13,25 @@ import frc.robot.Robot;
 /**
  * An example command.  You can replace me with your own command.
  */
-public class ArcadeDrive extends Command {
-  public ArcadeDrive() {
+public class StopFrontArm extends Command {
+  public StopFrontArm() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_BaseMobile);
+    requires(Robot.m_Frontarm);
   }
 
   // Called just before this Command runs the first time
   @Override
-  protected void initialize(){
-    Robot.m_BaseMobile.stopRobot();
+  protected void initialize() {
+    Robot.m_Frontarm.stopFrontArm();
+    Robot.m_Frontarm.stopVacuum();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_BaseMobile.arcadedrive(Robot.m_oi.getPilotStick().getY(), -Robot.m_oi.getPilotStick().getZ(),true);
-  //  Robot.driveTrain.curvatureDrive(-Robot.m_oi.getPilotStick().getY(), Robot.m_oi.getPilotStick().getZ(),true);
+    Robot.m_Frontarm.stopFrontArm();
+    Robot.m_Frontarm.stopVacuum();
+ 
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -41,8 +43,8 @@ public class ArcadeDrive extends Command {
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    Robot.m_BaseMobile.stopRobot();
-
+    Robot.m_Frontarm.stopFrontArm();
+    Robot.m_Frontarm.stopVacuum();
   }
 
   // Called when another command which requires one or more of the same

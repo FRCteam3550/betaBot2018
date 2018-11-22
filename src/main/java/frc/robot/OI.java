@@ -43,7 +43,7 @@ public class OI {
 
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.
-  // button.whenPressed(new ExampleCommand());
+  // button.whileHeld(new ExampleCommand());
 
   // Run the command while the button is being held down and interrupt it once
   // the button is released.
@@ -67,33 +67,34 @@ public class OI {
   Joystick pilote = new Joystick(1);
   public OI(){
     
-  Button button4 = new JoystickButton(copilote, QUATRE);
-  button4.whenPressed(new FrontArmUp());
+  
+    Button button4 = new JoystickButton(copilote, QUATRE);
+  button4.whileHeld(new FrontArmUp());
 
   
   Button button3 = new JoystickButton(copilote, TROIS);
-  button3.whenPressed(new FrontArmDown());
+  button3.whileHeld(new FrontArmDown());
 
   Button button1 = new JoystickButton(copilote, UN);
-  button1.whenPressed(new Aspirer());
+  button1.whileHeld(new Aspirer());
 
   Button button2 = new JoystickButton(copilote, DEUX);
-  button2.whenPressed(new Rejeter());
+  button2.whileHeld(new Rejeter());
 
   Button button6 = new JoystickButton(copilote, SIX);
-  button6.whenPressed(new BackarmUp());
+  button6.whileHeld(new BackarmUp());
   
   Button button5 = new JoystickButton(copilote, CINQ);
-  button5.whenPressed(new BackDown());
+  button5.whileHeld(new BackDown());
 
   Button button7 = new JoystickButton(copilote, SEPT);
-  button7.whenPressed(new OpenDoor());
+  button7.whileHeld(new OpenDoor());
 
   Button button8 = new JoystickButton(copilote, HUIT);
-  button8.whenPressed(new CloseDoor());
+  button8.whileHeld(new CloseDoor());
 
   Button button9 = new JoystickButton(copilote, NEUF);
-  button9.whenPressed(new PushBalls());
+  button9.whileHeld(new PushBalls());
       }
 
   public Joystick getPilotStick(){

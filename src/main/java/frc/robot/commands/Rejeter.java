@@ -16,7 +16,7 @@ import frc.robot.Robot;
 public class Rejeter extends Command {
   public Rejeter() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_RockPlaque);
+    requires(Robot.m_Frontarm);
   }
 
   // Called just before this Command runs the first time
