@@ -23,7 +23,7 @@ public class FrontArm extends Subsystem {
   // here. Call these from Commands.
 
   private static SpeedController FrontLeft = RobotMap.LeftFrontArm;
-  private static SpeedController FrontRight = RobotMap.RightFrontArm;
+  //private static SpeedController FrontRight = RobotMap.RightFrontArm;
   private static SpeedController Vacuum = RobotMap.Vacuum;
 
   @Override
@@ -33,12 +33,12 @@ public class FrontArm extends Subsystem {
     }
   public void frontUp(){
     FrontLeft.set(-0.5);
-    FrontRight.set(0.5);
+   // FrontRight.set(0.5);
   }
 
   public void frontDown(){
     FrontLeft.set(0.5);
-    FrontRight.set(-0.5);
+   // FrontRight.set(-0.5);
   }
 
   public void aspirer(){
@@ -51,7 +51,7 @@ public class FrontArm extends Subsystem {
 
   public void stopFrontArm(){
     FrontLeft.set(0);
-    FrontRight.set(0);
+   // FrontRight.set(0);
   }
 
   public void stopVacuum(){

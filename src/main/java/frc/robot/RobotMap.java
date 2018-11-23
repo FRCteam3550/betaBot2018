@@ -48,13 +48,13 @@ public class RobotMap {
       RightMotor = new WPI_TalonSRX(2);//a valider
 
     //backArm
-      LeftBackArm = new WPI_TalonSRX(3);//a valider
+     /* LeftBackArm = new WPI_TalonSRX(3);//a valider
       RightBackArm = new WPI_TalonSRX(4);//a valider
-      BackDoor = new WPI_VictorSPX(7);//a valider
+      BackDoor = new WPI_VictorSPX(7);//a valider */
 
     //FrontArm
       LeftFrontArm = new WPI_TalonSRX(5);//a valider
-      RightFrontArm = new WPI_TalonSRX(6);//a valider
+     // RightFrontArm = new WPI_TalonSRX(6);//a valider
       Vacuum = new WPI_VictorSPX(8);//a valider
 
     //RockPlaque
