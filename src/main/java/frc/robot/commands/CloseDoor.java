@@ -5,15 +5,15 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+//package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+//import edu.wpi.first.wpilibj.command.Command;
+//import frc.robot.Robot;
 
 /**
  * An example command.  You can replace me with your own command.
  */
-public class CloseDoor extends Command {
+/*public class CloseDoor extends Command {
   public CloseDoor() {
     // Use requires() here to declare subsystem dependencies
     requires(Robot.m_BackArm);
@@ -51,3 +51,4 @@ public class CloseDoor extends Command {
     end();
   }
 } 
+*/

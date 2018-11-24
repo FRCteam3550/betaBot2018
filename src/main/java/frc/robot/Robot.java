@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -14,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
+import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -24,13 +26,18 @@ import frc.robot.subsystems.*;
  */
 public class Robot extends TimedRobot {
   public static BaseMobile m_BaseMobile;
-  public static BackArm m_BackArm;
+  //public static BackArm m_BackArm;
   public static FrontArm m_Frontarm;
   public static RockPlaque m_RockPlaque;
   public static OI m_oi;
+  private DriverStation ds = DriverStation.getInstance();
+  	private String gameCode;
+	SendableChooser<CommandGroup> m_autoChooserLeft;
+	SendableChooser<CommandGroup> m_autoChooserRight;
 
-  Command m_autonomousCommand;
-  SendableChooser<Command> m_chooser = new SendableChooser<>();
+ // Command m_autonomousCommand;
+ // SendableChooser<Command> m_chooser = new SendableChooser<>();
+  CommandGroup m_autonomousCommand;
 
   /**
    * This function is run when the robot is first started up and should be
@@ -41,14 +48,26 @@ public class Robot extends TimedRobot {
     RobotMap.init();
     //m_oi = new OI();
     m_BaseMobile = new BaseMobile();
-    m_BackArm = new BackArm();
+    //m_BackArm = new BackArm();
     m_Frontarm = new FrontArm();
     m_RockPlaque = new RockPlaque();
     m_oi = new OI();
-    m_chooser.addDefault("Default Auto", new DefaultAuto());
-    m_chooser.addObject("My Auto", new MyAuto());
-    SmartDashboard.putData("Auto mode", m_chooser);
-  }
+   // m_chooser.addDefault("Default Auto", new DefaultAuto());
+   // m_chooser.addObject("My Auto", new MyAuto());
+   // SmartDashboard.putData("Auto mode", m_chooser);
+    m_autoChooserLeft = new SendableChooser<CommandGroup>();
+    m_autoChooserLeft.addDefault("Default Auto", new MyDefaultAutoG());
+     m_autoChooserLeft.addObject("My Auto", new Cdr(1,2));
+     
+     SmartDashboard.putData("AutoModeLeft", m_autoChooserLeft);
+     m_autoChooserRight = new SendableChooser<CommandGroup>();
+     m_autoChooserRight.addDefault("Default Auto", new MyDefaultAutoG());
+     m_autoChooserRight.addObject("My Auto", new Cdr(1,2));
+     
+     SmartDashboard.putData("AutoModeRight", m_autoChooserRight);
+     
+
+    }
 
   /**
    * This function is called every robot packet, no matter the mode. Use
@@ -89,7 +108,35 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_chooser.getSelected();
+  //m_autonomousCommand = m_chooser.getSelected();
+  
+  SmartDashboard.putNumber("test", 2);
+    gameCode = ds.getGameSpecificMessage();
+
+    if (gameCode.charAt(0) == 'L')
+		{
+			m_autonomousCommand = m_autoChooserLeft.getSelected();
+	    	if (m_autonomousCommand != null) {
+	    		m_autonomousCommand.start();
+	    	}
+		}
+        else if (gameCode.charAt(0) == 'R')
+        //else if (tempGameData.charAt(0) == 'R') // Bascule cote droit
+		{
+    		m_autonomousCommand = m_autoChooserRight.getSelected();
+	    	if (m_autonomousCommand != null) {
+	    		m_autonomousCommand.start();
+	    	}
+		}
+		else {  // Sinon equivalent de l'autoline
+    	    //autonomousCommand = new DriveDistanceCommand(135,1);
+			m_autonomousCommand = new MyDefaultAutoG();
+			if (m_autonomousCommand != null) {
+				m_autonomousCommand.start();
+			}
+		}
+		
+	    //chooseAutonomous();
     
 
     /*
@@ -130,6 +177,9 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+    SmartDashboard.putNumber("Speed", m_oi.getPilotStick().getY());
+
+
   }
 
   /**

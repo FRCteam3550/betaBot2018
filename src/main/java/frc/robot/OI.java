@@ -62,6 +62,7 @@ public class OI {
   private int SEPT = 7;
   private int HUIT = 8;
   private int NEUF = 9; 
+  private int DIX = 10;
 
   Joystick copilote = new Joystick(0);
   Joystick pilote = new Joystick(1);
@@ -81,20 +82,23 @@ public class OI {
   Button button2 = new JoystickButton(copilote, DEUX);
   button2.whileHeld(new Rejeter());
 
-  Button button6 = new JoystickButton(copilote, SIX);
-  button6.whileHeld(new BackarmUp());
+  //Button button6 = new JoystickButton(copilote, SIX);
+  //button6.whileHeld(new BackarmUp());
   
-  Button button5 = new JoystickButton(copilote, CINQ);
-  button5.whileHeld(new BackDown());
+  //Button button5 = new JoystickButton(copilote, CINQ);
+  //button5.whileHeld(new BackDown());
 
-  Button button7 = new JoystickButton(copilote, SEPT);
-  button7.whileHeld(new OpenDoor());
+  //Button button7 = new JoystickButton(copilote, SEPT);
+  //button7.whileHeld(new OpenDoor());
 
-  Button button8 = new JoystickButton(copilote, HUIT);
-  button8.whileHeld(new CloseDoor());
+  // button8 = new JoystickButton(copilote, HUIT);
+  //button8.whileHeld(new CloseDoor());
 
   Button button9 = new JoystickButton(copilote, NEUF);
   button9.whileHeld(new PushBalls());
+
+  Button button10 = new JoystickButton(copilote, DIX);
+  button10.whileHeld(new MyAuto());
       }
 
   public Joystick getPilotStick(){

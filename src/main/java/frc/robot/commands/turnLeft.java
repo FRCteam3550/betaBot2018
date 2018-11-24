@@ -1,46 +1,46 @@
 /*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
+/* Copyright (c) 2018 FIRST. All Rights Reserved.                             */
 /* Open Source Software - may be modified and shared by FRC teams. The code   */
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-//package frc.robot.commands;
+package frc.robot.commands;
 
-//import edu.wpi.first.wpilibj.command.Command;
-//import frc.robot.Robot;
+import edu.wpi.first.wpilibj.command.TimedCommand;
+import frc.robot.Robot;
 
 /**
- * An example command.  You can replace me with your own command.
+ * Add your docs here.
  */
-/*public class StopDoor extends Command {
-  public StopDoor() {
+public class turnLeft extends TimedCommand {
+  /**
+   * Add your docs here.
+   */
+  public turnLeft(double timeout) {
+    super(timeout);
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.m_BackArm);
+    // eg. requires(chassis);
+  requires(Robot.m_BaseMobile);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-  Robot.m_BackArm.stopDoor();
+    Robot.m_BaseMobile.stopRobot();
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_BackArm.stopDoor();
+    Robot.m_BaseMobile.arcadedrive(0.5, 0.0);
+    Robot.m_BaseMobile.arcadedrive(0.0, 0.5);
   }
 
-  // Make this return true when this Command no longer needs to run execute()
-  @Override
-  protected boolean isFinished() {
-    return false;
-  }
-
-  // Called once after isFinished returns true
+  // Called once after timeout
   @Override
   protected void end() {
-    Robot.m_BackArm.stopDoor();
+    Robot.m_BaseMobile.stopRobot();
   }
 
   // Called when another command which requires one or more of the same
@@ -49,5 +49,4 @@
   protected void interrupted() {
     end();
   }
-} 
-*/
+}
