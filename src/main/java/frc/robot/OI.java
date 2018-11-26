@@ -82,8 +82,13 @@ public class OI {
   Button button2 = new JoystickButton(copilote, DEUX);
   button2.whileHeld(new Rejeter());
 
+<<<<<<< HEAD
   //Button button6 = new JoystickButton(copilote, SIX);
   //button6.whileHeld(new BackarmUp());
+=======
+  /*Button button6 = new JoystickButton(copilote, SIX);
+  button6.whileHeld(new BackarmUp());
+>>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
   
   //Button button5 = new JoystickButton(copilote, CINQ);
   //button5.whileHeld(new BackDown());
@@ -91,8 +96,13 @@ public class OI {
   //Button button7 = new JoystickButton(copilote, SEPT);
   //button7.whileHeld(new OpenDoor());
 
+<<<<<<< HEAD
   // button8 = new JoystickButton(copilote, HUIT);
   //button8.whileHeld(new CloseDoor());
+=======
+  Button button8 = new JoystickButton(copilote, HUIT);
+  button8.whileHeld(new CloseDoor()); */
+>>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
 
   Button button9 = new JoystickButton(copilote, NEUF);
   button9.whileHeld(new PushBalls());

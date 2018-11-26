@@ -27,7 +27,11 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
  */
 public class Robot extends TimedRobot {
   public static BaseMobile m_BaseMobile;
+<<<<<<< HEAD
   //public static BackArm m_BackArm;
+=======
+ // public static BackArm m_BackArm;
+>>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
   public static FrontArm m_Frontarm;
   public static RockPlaque m_RockPlaque;
   public static OI m_oi;
@@ -49,7 +53,11 @@ public class Robot extends TimedRobot {
     RobotMap.init();
     //m_oi = new OI();
     m_BaseMobile = new BaseMobile();
+<<<<<<< HEAD
     //m_BackArm = new BackArm();
+=======
+   // m_BackArm = new BackArm();
+>>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
     m_Frontarm = new FrontArm();
     m_RockPlaque = new RockPlaque();
     m_oi = new OI();
