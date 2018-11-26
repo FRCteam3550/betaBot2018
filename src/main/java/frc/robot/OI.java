@@ -99,7 +99,8 @@ public class OI {
 
   Button button10 = new JoystickButton(copilote, DIX);
   button10.whileHeld(new MyAuto());
-      }
+
+}
 
   public Joystick getPilotStick(){
     return pilote;

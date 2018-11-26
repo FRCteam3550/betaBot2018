@@ -32,13 +32,13 @@ public class FrontArm extends Subsystem {
     setDefaultCommand(new StopFrontArm()) ;
     }
   public void frontUp(){
-    FrontLeft.set(-0.5);
-    FrontRight.set(0.5);
+    FrontLeft.set(-0.3);
+    FrontRight.set(0.3);
   }
 
   public void frontDown(){
-    FrontLeft.set(0.5);
-    FrontRight.set(-0.5);
+    FrontLeft.set(0.4);
+    FrontRight.set(-0.4);
   }
 
   public void aspirer(){

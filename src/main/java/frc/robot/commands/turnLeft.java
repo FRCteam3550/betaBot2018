@@ -33,8 +33,9 @@ public class turnLeft extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_BaseMobile.arcadedrive(0.5, 0.0);
-    Robot.m_BaseMobile.arcadedrive(0.0, 0.5);
+  Robot.m_BaseMobile.arcadedrive(-0.6, 0.0);
+ // Robot.m_BaseMobile.arcadedrive(0.0, 0.5);
+   
   }
 
   // Called once after timeout

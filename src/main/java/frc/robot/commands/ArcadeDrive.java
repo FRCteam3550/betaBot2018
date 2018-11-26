@@ -28,7 +28,7 @@ public class ArcadeDrive extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_BaseMobile.arcadedrive(Robot.m_oi.getPilotStick().getY(), -Robot.m_oi.getPilotStick().getZ(),true);
+    Robot.m_BaseMobile.arcadedrive(0.7*Robot.m_oi.getPilotStick().getY(), -0.8*Robot.m_oi.getPilotStick().getZ(),true);
   //  Robot.driveTrain.curvatureDrive(-Robot.m_oi.getPilotStick().getY(), Robot.m_oi.getPilotStick().getZ(),true);
   }
 

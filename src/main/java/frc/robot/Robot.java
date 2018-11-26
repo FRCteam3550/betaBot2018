@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.CameraServer;
 import frc.robot.commands.*;
 import frc.robot.subsystems.*;
 import edu.wpi.first.wpilibj.command.CommandGroup;
@@ -31,12 +32,12 @@ public class Robot extends TimedRobot {
   public static RockPlaque m_RockPlaque;
   public static OI m_oi;
   private DriverStation ds = DriverStation.getInstance();
-  	private String gameCode;
+  private String gameCode;
 	SendableChooser<CommandGroup> m_autoChooserLeft;
 	SendableChooser<CommandGroup> m_autoChooserRight;
 
  // Command m_autonomousCommand;
- // SendableChooser<Command> m_chooser = new SendableChooser<>();
+  SendableChooser<Command> m_chooser = new SendableChooser<>();
   CommandGroup m_autonomousCommand;
 
   /**
@@ -52,19 +53,22 @@ public class Robot extends TimedRobot {
     m_Frontarm = new FrontArm();
     m_RockPlaque = new RockPlaque();
     m_oi = new OI();
-   // m_chooser.addDefault("Default Auto", new DefaultAuto());
-   // m_chooser.addObject("My Auto", new MyAuto());
-   // SmartDashboard.putData("Auto mode", m_chooser);
+    
+    m_chooser.addDefault("Default1 Auto", new DefaultAuto());
+    m_chooser.addObject("My Auto", new MyAuto());
+    SmartDashboard.putData("Auto mode", m_chooser);
+    
     m_autoChooserLeft = new SendableChooser<CommandGroup>();
-    m_autoChooserLeft.addDefault("Default Auto", new MyDefaultAutoG());
-     m_autoChooserLeft.addObject("My Auto", new Cdr(1,2));
-     
+    // time1 speed1, turn1 time2 speed2 turn2
+    m_autoChooserLeft.addDefault("Default Auto", new Cdr(1.5 , -0.4, 0, 2 , -0.4, 0.5));
+     m_autoChooserLeft.addObject("My Auto", new DefaultG());
      SmartDashboard.putData("AutoModeLeft", m_autoChooserLeft);
-     m_autoChooserRight = new SendableChooser<CommandGroup>();
-     m_autoChooserRight.addDefault("Default Auto", new MyDefaultAutoG());
-     m_autoChooserRight.addObject("My Auto", new Cdr(1,2));
-     
-     SmartDashboard.putData("AutoModeRight", m_autoChooserRight);
+
+   //  m_autoChooserRight = new SendableChooser<CommandGroup>();
+     //m_autoChooserRight.addDefault("Default Auto", new Cdr(1, 2));
+     //m_autoChooserRight.addObject("My Auto", new Cdr(1,2));
+     //SmartDashboard.putData("AutoModeRight", m_autoChooserRight);
+     CameraServer.getInstance().startAutomaticCapture();
      
 
     }
@@ -120,17 +124,20 @@ public class Robot extends TimedRobot {
 	    		m_autonomousCommand.start();
 	    	}
 		}
-        else if (gameCode.charAt(0) == 'R')
+      //  else if (gameCode.charAt(0) == 'R')
         //else if (tempGameData.charAt(0) == 'R') // Bascule cote droit
-		{
-    		m_autonomousCommand = m_autoChooserRight.getSelected();
-	    	if (m_autonomousCommand != null) {
-	    		m_autonomousCommand.start();
-	    	}
-		}
+	//	{
+    		//m_autonomousCommand = m_autoChooserRight.getSelected();
+	    	//if (m_autonomousCommand != null) {
+	    		//m_autonomousCommand.start();
+	    	//}
+		//}
 		else {  // Sinon equivalent de l'autoline
     	    //autonomousCommand = new DriveDistanceCommand(135,1);
-			m_autonomousCommand = new MyDefaultAutoG();
+    //	m_autonomousCommand = new MyDefaultAutoG(); 
+                    // time1 speed1, turn1 time2 speed2 turn2
+    m_autonomousCommand = new Cdr(1.5 , 0.8, 0, 2 , 0.5, 0.5); 
+    m_autonomousCommand.start();
 			if (m_autonomousCommand != null) {
 				m_autonomousCommand.start();
 			}
@@ -140,10 +147,16 @@ public class Robot extends TimedRobot {
     
 
     /*
-     * String autoSelected = SmartDashboard.getString("Auto Selector",
-     * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-     * = new MyAutoCommand(); break; case "Default Auto": default:
-     * autonomousCommand = new ExampleCommand(); break; }
+      String autoSelected = SmartDashboard.getString("Auto Selector","Default");
+       switch(autoSelected) {
+        case "My Auto": 
+       autonomousCommand = new MyAutoCommand();
+        break; 
+        case "Default Auto": 
+        default:
+        autonomousCommand = new ExampleCommand();
+         break;
+         }
      */
 
     // schedule the autonomous command (example)

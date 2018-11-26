@@ -17,8 +17,12 @@ public class turnRight extends TimedCommand {
   /**
    * Add your docs here.
    */
-  public turnRight(double timeout) {
+  double turn;
+  double speed;
+  public turnRight(double timeout,double speed, double turn) {
     super(timeout);
+    this.turn = turn;
+    this.speed = speed;
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
     requires(Robot.m_BaseMobile);
@@ -33,8 +37,8 @@ public class turnRight extends TimedCommand {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_BaseMobile.arcadedrive(0.5, 0.0);
-    Robot.m_BaseMobile.arcadedrive(0.0, -0.5);
+   Robot.m_BaseMobile.arcadedrive(speed, turn );
+  // Robot.m_BaseMobile.arcadedrive(0.0, -0.5);
   }
 
   // Called once after timeout

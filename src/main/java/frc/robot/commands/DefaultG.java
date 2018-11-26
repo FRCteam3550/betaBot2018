@@ -9,21 +9,17 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
-public class Cdr extends CommandGroup {
+public class DefaultG extends CommandGroup {
   /**
    * Add your docs here.
    */
-  public Cdr(double timeout1,double speed1, double turn1, double timeout2 ,double speed2, double turn2) {
+  public DefaultG() {
     // Add Commands here:
     // e.g. addSequential(new Command1());
     // addSequential(new Command2());
     // these will run in order.
-
-    //addSequential(new turnLeft(timeout1));
-    addSequential(new turnRight(timeout1 ,speed1, turn1));
-    addSequential(new turnRight(timeout2 ,speed2,  turn2));
-
-
+    addSequential(new DefaultAuto());
+    addSequential(new DefaultAuto());
     // To run multiple commands at the same time,
     // use addParallel()
     // e.g. addParallel(new Command1());
