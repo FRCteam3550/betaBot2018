@@ -25,6 +25,7 @@ public class FrontArm extends Subsystem {
   private static SpeedController FrontLeft = RobotMap.LeftFrontArm;
   //private static SpeedController FrontRight = RobotMap.RightFrontArm;
   private static SpeedController Vacuum = RobotMap.Vacuum;
+  private static DigitalInput m_limitswitch = RobotMap.limitSwitch;
 
   @Override
   public void initDefaultCommand() {
@@ -32,23 +33,23 @@ public class FrontArm extends Subsystem {
     setDefaultCommand(new StopFrontArm()) ;
     }
   public void frontUp(){
-<<<<<<< HEAD
-    FrontLeft.set(-0.3);
-    FrontRight.set(0.3);
+
+    FrontLeft.set(0.3);
+    //FrontRight.set(0.3);
   }
 
-  public void frontDown(){
-    FrontLeft.set(0.4);
-    FrontRight.set(-0.4);
-=======
-    FrontLeft.set(-0.5);
+  //public void frontDown(){
+  //  FrontLeft.set(0.4);
+   // FrontRight.set(-0.4);
+
+   // FrontLeft.set(-0.5);
    // FrontRight.set(0.5);
-  }
+  //}
 
   public void frontDown(){
-    FrontLeft.set(0.5);
+    FrontLeft.set(-0.3);
    // FrontRight.set(-0.5);
->>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
+
   }
 
   public void aspirer(){
@@ -66,5 +67,9 @@ public class FrontArm extends Subsystem {
 
   public void stopVacuum(){
     Vacuum.set(0);
+  }
+
+  public boolean getLimitSwitch(){
+    return m_limitswitch.get();
   }
 } 

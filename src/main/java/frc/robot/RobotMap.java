@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.*;
 import com.ctre.phoenix.motorcontrol.can.*;
+import edu.wpi.first.wpilibj.DigitalInput;
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -37,9 +38,13 @@ public class RobotMap {
   public static SpeedController LeftFrontArm;
   public static SpeedController RightFrontArm;
   public static SpeedController Vacuum;
+  public static DigitalInput limitSwitch;
+
 
   //RockPlaque
   public static SpeedController PusherMotor;
+
+
 
   public static void init(){
 
@@ -53,9 +58,10 @@ public class RobotMap {
       BackDoor = new WPI_VictorSPX(7);//a valider */
 
     //FrontArm
-      LeftFrontArm = new WPI_TalonSRX(5);//a valider
-     // RightFrontArm = new WPI_TalonSRX(6);//a valider
+     LeftFrontArm = new WPI_TalonSRX(5);//a valider
+     //RightFrontArm = new WPI_TalonSRX(6);//a valider
       Vacuum = new WPI_VictorSPX(8);//a valider
+      limitSwitch = new DigitalInput(9);
 
     //RockPlaque
       PusherMotor = new WPI_VictorSPX(9);//a valider

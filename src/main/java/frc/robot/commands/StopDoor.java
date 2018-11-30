@@ -5,11 +5,11 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-<<<<<<< HEAD
+
 //package frc.robot.commands;
-=======
+
 /*package frc.robot.commands;
->>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
+
 
 //import edu.wpi.first.wpilibj.command.Command;
 //import frc.robot.Robot;
@@ -56,6 +56,5 @@
 <<<<<<< HEAD
 } 
 */
-=======
-} */
->>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
+
+//} */

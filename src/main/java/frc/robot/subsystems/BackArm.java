@@ -5,11 +5,10 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-<<<<<<< HEAD
+
 //package frc.robot.subsystems;
-=======
+
 /*package frc.robot.subsystems;
->>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
 
 //import edu.wpi.first.wpilibj.command.Subsystem;
 //import frc.robot.RobotMap;
@@ -64,9 +63,8 @@
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-<<<<<<< HEAD
+
 }
 */
-=======
-}*/
->>>>>>> d5704d2dd1242595b92de0917647f9161c67c795
+//}*/
+

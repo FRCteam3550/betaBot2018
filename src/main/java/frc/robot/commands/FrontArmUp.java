@@ -30,9 +30,12 @@ public class FrontArmUp extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.m_Frontarm.frontUp();
+    if(!Robot.m_Frontarm.getLimitSwitch()) 
+        Robot.m_Frontarm.frontUp();
+    else
+      Robot.m_Frontarm.stopFrontArm();
+    }
   
-  }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
